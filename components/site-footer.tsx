@@ -45,7 +45,7 @@ export function SiteFooter() {
 
       <div className="container-content border-t border-[var(--line)] py-6 text-xs text-[var(--muted)] flex flex-wrap justify-between gap-2">
         <p>© {year} {site.name}</p>
-        <p>Made with ♡</p>
+        <p>Made with ♡ in Leipzig</p>
       </div>
     </footer>
   );
