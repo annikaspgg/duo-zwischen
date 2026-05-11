@@ -2,11 +2,22 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 import { blurFor } from "@/lib/blur-data";
 import heroImg from "@/public/images/s-mit-lachen-und-l-cke-standard-dgdybx.jpg";
+import heroImgMobile from "@/public/images/duo-zwischen-mobile.png";
 
 export function Hero() {
   return (
     <section className="relative">
       <div className="relative w-full h-[clamp(420px,72vh,780px)] overflow-hidden">
+        <Image
+          src={heroImgMobile}
+          alt="Annika Spegg und Robert Rülke lachend, Hero-Aufnahme des Duo Zwischen"
+          fill
+          sizes="100vw"
+          priority
+          placeholder="blur"
+          blurDataURL={blurFor("duo-zwischen-mobile.png")}
+          className="object-cover md:hidden"
+        />
         <Image
           src={heroImg}
           alt="Annika Spegg und Robert Rülke lachend mit Geigen, Hero-Aufnahme des Duo Zwischen"
@@ -15,7 +26,7 @@ export function Hero() {
           priority
           placeholder="blur"
           blurDataURL={blurFor("s-mit-lachen-und-l-cke-standard-dgdybx.jpg")}
-          className="object-cover"
+          className="object-cover hidden md:block"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/60" />
         <div className="absolute inset-x-0 bottom-0">
